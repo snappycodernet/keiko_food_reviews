@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class OvalClipperUpper extends CustomClipper<Path> {
   Radius? radius;
 
-  OvalClipperUpper(this.radius);
+  OvalClipperUpper([this.radius]);
 
   @override
   Path getClip(Size size) {
@@ -22,5 +22,4 @@ class OvalClipperUpper extends CustomClipper<Path> {
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
     return false;
   }
-  
 }

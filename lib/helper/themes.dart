@@ -21,6 +21,6 @@ class Themes {
 }
 
 class ThemeColors {
-  static const Color m3Baseline = Color(0xff6750a4);
-  static const Color locationPin = Colors.lightBlue;
+  static const Color m3Baseline = Color(0xffff3333);
+  static const Color locationPin = Colors.lightGreenAccent;
 }
