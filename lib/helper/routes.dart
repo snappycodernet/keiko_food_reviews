@@ -11,17 +11,30 @@ import 'package:keiko_food_reviews/pages/review_map_locations/review_map_locatio
 
 import '../pages/home.dart';
 
+class RoutePathsEnum {
+  static const Home = "/home";
+  static const UserLogin = "/user_login";
+  static const UserRegister = "/user_register";
+  static const UserForgotPassword = "/user_forgot_password";
+  static const ReviewList = "/review_list";
+  static const ReviewEntryView = "/review_entry_view";
+  static const ReviewEntryEdit = "/review_entry_edit";
+  static const ReviewEntryPhotoZoom = "/review_entry_photo_zoom";
+  static const ReviewMapLocations = "/review_map_locations";
+  static const ReviewGridPhotos = "/review_grid_photos";
+}
+
 class Routes {
   static final Map<String, WidgetBuilder> routes = {
-    Home.route: (BuildContext context) => const Home(),
-    UserLogin.route: (BuildContext context) => const UserLogin(),
-    UserRegister.route: (BuildContext context) => const UserRegister(),
-    UserForgotPassword.route: (BuildContext context) => const UserForgotPassword(),
-    ReviewList.route: (BuildContext context) => const ReviewList(),
-    ReviewEntryView.route: (BuildContext context) => const ReviewEntryView(),
-    ReviewEntryEdit.route: (BuildContext context) => const ReviewEntryEdit(),
-    ReviewEntryPhotoZoom.route: (BuildContext context) => const ReviewEntryPhotoZoom(),
-    ReviewMapLocations.route: (BuildContext context) => const ReviewMapLocations(),
-    ReviewGridPhotos.route: (BuildContext context) => const ReviewGridPhotos(),
+    RoutePathsEnum.Home: (BuildContext context) => const Home(),
+    RoutePathsEnum.UserLogin: (BuildContext context) => const UserLogin(),
+    RoutePathsEnum.UserRegister: (BuildContext context) => const UserRegister(),
+    RoutePathsEnum.UserForgotPassword: (BuildContext context) => const UserForgotPassword(),
+    RoutePathsEnum.ReviewList: (BuildContext context) => const ReviewList(),
+    RoutePathsEnum.ReviewEntryView: (BuildContext context) => const ReviewEntryView(),
+    RoutePathsEnum.ReviewEntryEdit: (BuildContext context) => const ReviewEntryEdit(),
+    RoutePathsEnum.ReviewEntryPhotoZoom: (BuildContext context) => const ReviewEntryPhotoZoom(),
+    RoutePathsEnum.ReviewMapLocations: (BuildContext context) => const ReviewMapLocations(),
+    RoutePathsEnum.ReviewGridPhotos: (BuildContext context) => const ReviewGridPhotos(),
   };
 }

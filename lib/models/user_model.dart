@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 class UserModel {
   final String uid;
   final DateTime createdDate;
@@ -46,6 +48,21 @@ class UserModel {
       displayName: json['displayName'],
       photoURL: json['photoURL'],
       providerId: json['providerId'],
+    );
+  }
+
+  static UserModel? fromDatabaseModel(User? user) {
+    if(user == null) return null;
+
+    return UserModel(
+      uid: user.uid,
+      createdDate: user.metadata.creationTime ?? DateTime.now(),
+      email: user.email ?? "",
+      emailVerified: user.emailVerified,
+      phoneNumber: user.phoneNumber ?? "",
+      displayName: user.displayName ?? "",
+      photoURL: user.photoURL ?? "",
+      providerId: user.providerData.first.providerId
     );
   }
 

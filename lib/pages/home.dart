@@ -7,8 +7,6 @@ import 'package:keiko_food_reviews/widget/web_layout.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
 
-  static const String route = '/home';
-
   @override
   State<Home> createState() => _HomeState();
 }

@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 class UserRegister extends StatefulWidget {
   const UserRegister({super.key});
 
-  static const String route = '/user_register';
-
   @override
   State<UserRegister> createState() => _UserRegisterState();
 }

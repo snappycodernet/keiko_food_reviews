@@ -4,8 +4,6 @@ import 'package:keiko_food_reviews/helper/clippers.dart';
 class ReviewList extends StatefulWidget {
   const ReviewList({super.key});
 
-  static const String route = '/review_list';
-
   @override
   State<ReviewList> createState() => _ReviewListState();
 }

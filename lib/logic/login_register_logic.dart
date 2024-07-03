@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:keiko_food_reviews/helper/validators.dart';
+import 'package:keiko_food_reviews/models/user_model.dart';
+import 'package:keiko_food_reviews/services/database_service.dart';
 
 import '../services/authentication_service_base.dart';
 
@@ -21,8 +23,9 @@ class LoginRegisterLogic extends ChangeNotifier {
   bool _isPasswordConfirmOk = false;
 
   final AuthenticationServiceBase authService;
+  final DatabaseService dbService;
 
-  LoginRegisterLogic({required this.authService});
+  LoginRegisterLogic({required this.authService, required this.dbService});
 
   final LoginRegisterInfo _loginRegisterInfo = LoginRegisterInfo(
     buttonLoginRegisterEnabled: false,
@@ -70,6 +73,22 @@ class LoginRegisterLogic extends ChangeNotifier {
     _loginRegisterInfo.showLoginRegisterError = true;
     _loginRegisterInfo.loginRegisterErrorMessage = message;
     notifyListeners();
+  }
+
+  void register({required String email, required String password}) {
+    authService.createUserWithEmailAndPassword(email: email, password: password)
+      .then((user) {
+        UserModel? model = UserModel.fromDatabaseModel(user);
+
+        if(model != null) {
+          dbService.addUser(model)
+            .then((value) => debugPrint('Success: $value'))
+            .onError((error, stackTrace) => showLoginErrorWithMessage(message: '$error'));
+        }
+      })
+      .onError((error, stackTrace) {
+        showLoginErrorWithMessage(message: '$error');
+      });
   }
 
   void login({required String email, required String password}) {
