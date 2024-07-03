@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:keiko_food_reviews/firebase_options.dart';
 import 'package:keiko_food_reviews/helper/themes.dart';
 import 'package:keiko_food_reviews/ioc/ioc_container.dart';
-import 'package:keiko_food_reviews/pages/authentication/user_login.dart';
-import 'package:keiko_food_reviews/pages/authentication/user_register.dart';
-import 'package:keiko_food_reviews/pages/home.dart';
+import 'package:keiko_food_reviews/pages/authentication/user_forgot_password.dart';
 
 Future<void> main () async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: Themes.lightTheme(),
       darkTheme: Themes.darkTheme(),
       themeMode: ThemeMode.system,
-      home: const UserLogin(),
+      home: const UserForgotPassword(),
     );
   }
 }
