@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class Validators {
   static bool email({required String email}) {
     final emailRegex = RegExp(
