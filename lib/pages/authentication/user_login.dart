@@ -149,9 +149,9 @@ class _UserLoginState extends State<UserLogin> {
                         TextButton(
                           onPressed: () => Navigator.of(context).pushReplacementNamed(RoutePathsEnum.UserRegister),
                           child: Text(
-                            'Register',
+                            'Create Account',
                             style: TextStyle(
-                              color: Theme.of(context).disabledColor
+                              color: Theme.of(context).primaryColor
                             )
                           )
                         ),
